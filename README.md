@@ -19,5 +19,5 @@ Create a page with a cat button and a dog button. When the cat button is clicked
 - Add an `I Love Cats` button and an `I Love Dogs` button `AppContainer` component
 - Define `userLikesCats` as a property of state and set the value to false. This value will be updated when the `I Love Cats` button is clicked
 - Define `userLikesDogs` as a property of state and set the value to false. This value will be updated when the `I Love Dogs` button is clicked
-- If the user clicks the `I Love Cats` button, display the `Cats` component on the page
-- If the user clicks the `I Love Dogs` button, display the `Dogs` component on the page
+- If the user clicks the `I Love Cats` button, display the `Cats` component on the page using element variables
+- If the user clicks the `I Love Dogs` button, display the `Dogs` component on the page using element variables 
