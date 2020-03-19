@@ -1,20 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react';
 
 class Cat extends Component {
+    // useless constructor
     constructor(props) {
         super(props);
         this.state = {
 
         }
     }
+    // display text and image related to cats
     render() {
         return (
-            <div>
-                <h1>You're a cat person!</h1>
-                <img src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_weight_other/1800x1200_cat_weight_other.jpg?resize=600px:*" alt="cat"/>
-            </div>
-        );
+            <Fragment>
+                <h2>You're a cat person!</h2>
+                <img src="https://cdn.mos.cms.futurecdn.net/vChK6pTy3vN3KbYZ7UU7k3-1200-80.jpg" alt="cat image" />
+            </Fragment>
+        )
     }
 }
-
 export default Cat;

@@ -1,41 +1,47 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react';
+import Cat from './Cat'
 import Dog from './Dog';
-import Cat from './Cat';
 
 class AppContainer extends Component {
     constructor(props) {
         super(props);
+        // set initial state
         this.state = {
-            userLikesCats : false,
-            userLikesDogs : false,
+            userLikesCats: false, // flag to conditionally render Cat component
+            userLikesDogs: false, // flag to conditionally render Dog component
         }
     }
-
-    updateCat = () => {
-        this.setState({userLikesDogs : false});
-        this.setState({userLikesCats : true});
+    // event handler - tied to onClick listener
+    updateUserLikesCats = () => {
+        this.setState({ userLikesDogs: false }); // toggle Dog flag to false
+        this.setState({ userLikesCats: true }); // toggle Cat flag to true
     }
-    updateDog = () => {
-        this.setState({userLikesCats : false});
-        this.setState({userLikesDogs : true});
+
+    updateUserLikesDogs = () => {
+        this.setState({ userLikesCats: false }); // toggle Cat flag to false
+        this.setState({ userLikesDogs: true }); // toggle Dog flag to true
     }
 
     render() {
-        let userFavPet;
-        if(this.state.userLikesCats){
-            userFavPet = <Cat/>
-        } else if (this.state.userLikesDogs){
-            userFavPet = <Dog/>
+        // conditionally render child component
+        let userFavPet; // declare element variable as undefined
+        // if userLikeDogs is true
+        if (this.state.userLikesDogs) {
+            userFavPet = <Dog /> // set value of element variable to Dog component
         }
+        // if userLikeCats is true
+        else if (this.state.userLikesCats) {
+            userFavPet = <Cat /> // set value of element variable to Cat component
+        }
+        // display test, buttons, and variable
         return (
-            <div>
+            <Fragment>
                 <h1>Favorite Pet App</h1>
-                <button onClick = {this.updateCat}>I Love Cats</button>
-                <button onClick = {this.updateDog}>I Love Dogs</button>
+                <button onClick={this.updateUserLikesDogs}>I Love Dogs</button>
+                <button onClick={this.updateUserLikesCats}>I Love Cats</button>
                 {userFavPet}
-            </div>
-        );
+            </Fragment>
+        )
     }
 }
-
-export default AppContainer;
+export default AppContainer
